@@ -65,7 +65,7 @@ router.get("/my-booking/:email/:phone", async (req, res) => {
       return res.status(400).json({ message: "Email and phone are required" });
     }
 
-    const myBooking = await Booking.find({ email, phone });
+    const myBooking = await Booking.find({ email: email.toLowerCase().trim(), phone: phone.trim() });
 
     if (myBooking.length === 0) {
       return res.status(404).json({ message: "No booking found" });
