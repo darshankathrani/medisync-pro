@@ -1,0 +1,158 @@
+.wrapper {
+  padding: 80px 50px;
+  background-color: var(--bg-primary-color);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  max-width: 1100px;
+  width: 100%;
+  gap: 30px;
+}
+
+.sidebar {
+  flex: 0.8;
+  background: white;
+  padding: 40px 30px;
+  border-radius: 25px;
+  height: fit-content;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.dateInfo i {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  display: block;
+}
+
+.dateInfo h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.dateInfo p {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.currentDate {
+  margin-top: 10px;
+  padding: 12px;
+  background: var(--bg-primary-color);
+  color: var(--primary-color);
+  font-weight: 600;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.legend {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dotAvailable {
+  background: var(--primary-color);
+}
+.dotBooked {
+  background: #e5e7eb;
+}
+
+.mainContent {
+  flex: 2;
+}
+
+.gridHeader {
+  margin-bottom: 30px;
+}
+
+.gridHeader h2 {
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.gridHeader span {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.slotGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.slotCard {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  transition: 0.3s;
+  border: 1px solid transparent;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.slotCard:hover:not(.isBooked) {
+  border-color: var(--primary-color);
+  transform: translateY(-5px);
+}
+
+.slotTime {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.slotTime i {
+  color: var(--primary-color);
+}
+
+.bookBtn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--primary-color);
+  background: transparent;
+  color: var(--primary-color);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.bookBtn:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.bookedBtn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
