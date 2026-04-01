@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+
+  <!-- Sync Ring -->
+  <circle cx="32" cy="32" r="28" 
+          fill="none" 
+          stroke="#006aff" 
+          stroke-width="5"
+          stroke-dasharray="10 6"
+          stroke-linecap="round"/>
+
+  <!-- Heartbeat -->
+  <path d="M6 34 
+           L18 34 
+           L24 22 
+           L30 46 
+           L36 24 
+           L44 34 
+           L58 34" 
+        fill="none" 
+        stroke="#006aff" 
+        stroke-width="4" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+
+  <!-- Pulse Dot -->
+  <circle cx="44" cy="34" r="5" fill="#006aff"/>
+
+</svg>
