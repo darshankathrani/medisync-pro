@@ -1,5 +1,5 @@
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { animateNavbar } from "../animations/navbarGSAP";
 
 import Home from "./Home/Home";
@@ -11,7 +11,6 @@ import styles from "./Navbar.module.css";
 
 function Navbar() {
   const navigate = useNavigate();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const logoRef = useRef(null);
   const menuRef = useRef(null);
@@ -36,14 +35,6 @@ function Navbar() {
           MedCare
         </div>
 
-        {/* Mobile Menu Toggle Button */}
-        <button 
-          className="md:hidden text-3xl focus:outline-none mr-4"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          <i className={isMobileMenuOpen ? "ri-close-line" : "ri-menu-3-line"}></i>
-        </button>
-
         {/* Desktop Menu */}
         <div ref={menuRef} className={`${styles.menu} hidden md:flex`}>
           <Link to="/" className={styles.navLink}>
@@ -65,33 +56,6 @@ function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Menu Dropdown */}
-      <div 
-        className={`md:hidden absolute top-[80px] left-0 w-full bg-white shadow-xl flex flex-col items-center py-6 gap-6 transition-all duration-300 ease-in-out z-40 origin-top
-        ${isMobileMenuOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0 pointer-events-none"}`}
-      >
-          <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className={`${styles.navLink} text-xl`}>
-            Home
-          </Link>
-          <Link to="/booking" onClick={() => setIsMobileMenuOpen(false)} className={`${styles.navLink} text-xl`}>
-            Booking
-          </Link>
-          <Link to="/my-bookings" onClick={() => setIsMobileMenuOpen(false)} className={`${styles.navLink} text-xl`}>
-            My Booking
-          </Link>
-          <Link to="/slots" onClick={() => setIsMobileMenuOpen(false)} className={`${styles.navLink} text-xl`}>
-            Available Slots
-          </Link>
-          <button 
-            onClick={() => {
-              setIsMobileMenuOpen(false);
-              navigate("/slots");
-            }}
-            className="px-8 py-3 bg-black text-white font-medium cursor-pointer mt-2 text-lg active:scale-95 transition-transform"
-          >
-            Appointment
-          </button>
-      </div>
 
       <div className={styles.content}>
         <Routes>
